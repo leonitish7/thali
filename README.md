@@ -1,20 +1,73 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Thali Restaurant
 
-# Run and deploy your AI Studio app
+Thali is a modern restaurant website for showcasing the menu, highlighting the dining experience, and handling reservations, bookings, catering inquiries, gift cards, and contact details.
 
-This contains everything you need to run your app locally.
+## Project Overview
 
-View your app in AI Studio: https://ai.studio/apps/1a06142e-3148-4e5c-8b25-c97b33d2c6f7
+This project presents a polished restaurant landing page with dedicated sections for:
 
-## Run Locally
+- Hero and brand introduction
+- About the restaurant
+- Chef spotlight
+- Menu browsing
+- Gift cards
+- Catering events
+- Testimonials and gallery
+- FAQ and contact information
+- Booking and cart experience
+- Admin portal for reservation management
 
-**Prerequisites:**  Node.js
+## Site Credentials
 
+- Project name: Thali
+- Admin route: `/admin`
+- Restaurant address: K-43, 1st floor, Block K, Connaught Place, New Delhi, Delhi 110001
+- Phone: +91 77770 32666
+- Email: reservations@thali.com
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Languages and Stack Used
+
+- TypeScript
+- React
+- Vite
+- CSS with Tailwind CSS utilities
+- Firebase for authentication and Firestore data
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Locally
+
+```bash
+npm run dev
+```
+
+The app will run at `http://localhost:3000/`.
+
+## Environment Variables
+
+Create a local `.env` or `.env.local` file when needed for runtime secrets.
+
+- `GEMINI_API_KEY` for Gemini API calls
+- `APP_URL` for the hosted app URL
+- `VITE_INSTAGRAM_ACCESS_TOKEN` for the Instagram feed
+
+## Available Scripts
+
+- `npm run dev` - Start the Vite development server
+- `npm run build` - Build the app for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Type-check the project
+
+## Notes
+
+This repository is no longer using the AI Studio starter README. The documentation now reflects the Thali restaurant site and its actual feature set.
