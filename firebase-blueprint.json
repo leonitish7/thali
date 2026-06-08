@@ -1,0 +1,46 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "createdAt"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Table booking made by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "session": { "type": "string" },
+        "guests": { "type": "number" },
+        "totalPrice": { "type": "number" },
+        "packages": { "type": "object", "additionalProperties": { "type": "number" } },
+        "menuItems": { "type": "object", "additionalProperties": { "type": "number" } },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name", "email", "phone", "date", "time", "session", "guests", "totalPrice", "packages", "menuItems", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "User" },
+      "description": "Store user profiles"
+    },
+    "bookings/{bookingId}": {
+      "schema": { "$ref": "Booking" },
+      "description": "Store user bookings"
+    }
+  }
+}

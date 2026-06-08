@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email == 'nt10nitish@gmail.com';
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if isSignedIn() && (isOwner(userId) || isAdmin());
+      allow create: if isSignedIn() && isOwner(userId) && request.resource.data.keys().hasAll(['name', 'email', 'createdAt']);
+      allow update: if isSignedIn() && (isOwner(userId) || isAdmin());
+    }
+
+    // Bookings collection
+    match /bookings/{bookingId} {
+      allow read: if isSignedIn() && (isOwner(resource.data.userId) || isAdmin());
+      // Allow create if the user is writing a booking for themselves or if admin
+      allow create: if isSignedIn() 
+        && (
+             (request.resource.data.userId == request.auth.uid && request.resource.data.keys().hasAll(['userId', 'name', 'email', 'phone', 'date', 'time', 'session', 'guests', 'totalPrice', 'packages', 'menuItems', 'status', 'createdAt']))
+             || isAdmin()
+           );
+      allow update: if isSignedIn() && (isOwner(resource.data.userId) || isAdmin());
+      allow delete: if isAdmin();
+    }
+    // Tables collection
+    match /tables/{tableId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

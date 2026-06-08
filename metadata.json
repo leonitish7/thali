@@ -1,0 +1,6 @@
+{
+  "name": "Thali Restaurant",
+  "description": "A dynamic, modern restaurant website feature customizable, responsive design, and a user-friendly interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
