@@ -1,10 +1,10 @@
-# Thali Restaurant
+# Thali Restaurant Website
 
-Thali is a modern restaurant website for showcasing the menu, highlighting the dining experience, and handling reservations, bookings, catering inquiries, gift cards, and contact details.
+Thali is a modern restaurant website and web page for showcasing the menu, highlighting the dining experience, and handling reservations, bookings, catering inquiries, gift cards, and contact details.
 
 ## Project Overview
 
-This project presents a polished restaurant landing page with dedicated sections for:
+This project presents a polished restaurant web page with dedicated sections for:
 
 - Hero and brand introduction
 - About the restaurant
@@ -25,13 +25,24 @@ This project presents a polished restaurant landing page with dedicated sections
 - Phone: +91 77770 32666
 - Email: reservations@thali.com
 
-## Languages and Stack Used
+## Languages and Libraries Used
 
-- TypeScript
-- React
-- Vite
-- CSS with Tailwind CSS utilities
-- Firebase for authentication and Firestore data
+```txt
+Languages:
+	- HTML
+	- CSS
+	- TypeScript
+
+Libraries and Frameworks:
+	- React
+	- Vite
+	- Tailwind CSS
+	- Firebase
+	- lucide-react
+	- motion
+	- react-router-dom
+	- react-hot-toast
+```
 
 ## Getting Started
 
@@ -51,7 +62,7 @@ npm install
 npm run dev
 ```
 
-The app will run at `http://localhost:3000/`.
+The website will run at `http://localhost:3000/`.
 
 ## Environment Variables
 
@@ -70,4 +81,4 @@ Create a local `.env` or `.env.local` file when needed for runtime secrets.
 
 ## Notes
 
-This repository is no longer using the AI Studio starter README. The documentation now reflects the Thali restaurant site and its actual feature set.
+This repository is no longer using the AI Studio starter README. The documentation now reflects the Thali restaurant website and its actual feature set.
