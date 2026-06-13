@@ -18,6 +18,7 @@ import FAQAccordion from './components/FAQAccordion';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AdminPortal from './pages/AdminPortal';
+import { Analytics } from '@vercel/analytics/react';
 
 function PublicApp() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
     <BookingProvider>
       <CartProvider>
         <Toaster position="bottom-center" />
+        <Analytics />
         <Router>
           <Routes>
             <Route path="/" element={<PublicApp />} />
